@@ -23,9 +23,9 @@
     "memoizee": "^0.4.14",
     "react": "^16.8"
   },
-  "gitHead": "bcdbc860dcbc4eccc20ae1dea9848219cd301b73",
-  "originalAuthor": "Tanner Linsley",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "bcdbc860dcbc4eccc20ae1dea9848219cd301b73",
+  "originalAuthor": "Tanner Linsley"
 }
