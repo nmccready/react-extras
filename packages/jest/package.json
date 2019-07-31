@@ -1,0 +1,27 @@
+{
+  "name": "@znemz/react-extras-jest",
+  "version": "0.0.1",
+  "description": "React Hook for sorting",
+  "keywords": [
+    "react",
+    "react-table",
+    "sorting",
+    "table"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmccready/hooks.git"
+  },
+  "license": "MIT",
+  "author": "Nicholas McCready",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "memoizee": "^0.4.14",
+    "react": "^16.8"
+  },
+  "originalAuthor": "Tanner Linsley"
+}
