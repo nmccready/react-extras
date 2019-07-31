@@ -16,7 +16,8 @@
   "author": "Nicholas McCready",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "debug.js"
   ],
   "dependencies": {
     "lodash": "^4.17.11",

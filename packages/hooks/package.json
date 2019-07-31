@@ -16,7 +16,8 @@
   "author": "Nicholas McCready",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "debug.js"
   ],
   "main": "lib/index.js",
   "dependencies": {
