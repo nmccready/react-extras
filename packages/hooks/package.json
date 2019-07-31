@@ -8,7 +8,6 @@
     "sorting",
     "table"
   ],
-  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nmccready/hooks.git"
@@ -19,11 +18,13 @@
     "src",
     "lib"
   ],
+  "main": "lib/index.js",
   "dependencies": {
     "@znemz/use-global-hook": "0.1.9-0",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
     "react": "^16.8"
   },
+  "gitHead": "849acc4ab74e57fd5c50fe3acf7d6bf976269bbe",
   "originalAuthor": "Tanner Linsley"
 }
