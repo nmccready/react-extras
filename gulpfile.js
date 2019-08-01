@@ -102,7 +102,7 @@ const buildTasks = packages.map((pack) => {
 
   // typescript should be first to .d.ts files
   // babel outputs real js
-  gulp.task(taskName, gulp.parallel(gulp.series(typescript(pack)), build(pack), types(pack)));
+  gulp.task(taskName, gulp.parallel(gulp.series(typescript(pack), build(pack)), types(pack)));
   return taskName;
 });
 
