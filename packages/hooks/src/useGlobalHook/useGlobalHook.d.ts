@@ -1,10 +1,11 @@
-import { EffectCallback, DependencyList } from 'react';
+import { EffectCallback, DependencyList, Dispatch, SetStateAction } from 'react';
 import { Map } from '..';
 
-type UseEffectType = (effect: EffectCallback, deps?: DependencyList) => void;
-
+export type UseEffect = (effect: EffectCallback, deps?: DependencyList) => void;
+export type UseState = <S>(initialState: S | (() => S)) => [S, Dispatch<SetStateAction<S>>];
 interface ReactLib {
-  useEffect: UseEffectType;
+  useEffect: UseEffect;
+  useState: UseState;
 }
 
 /* since use-global-hook is not ts yet, might move this to it's index.d.ts file */
