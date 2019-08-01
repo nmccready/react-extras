@@ -51,20 +51,20 @@ export const alphanumeric = (a, b) => {
   return a.length - b.length;
 };
 
-export function datetime(a, b) {
-  a = a.getTime();
-  b = b.getTime();
-  return numeric(a, b);
+export function datetime(a: Date, b: Date) {
+  const aMs = a.getTime();
+  const bMs = b.getTime();
+  return numeric(aMs, bMs);
 }
 
-export function numeric(a, b) {
+export function numeric(a: number, b: number) {
   // eslint-disable-next-line
   return a === b ? 0 : a > b ? 1 : -1;
 }
 
 // Utils
 
-function toString(a) {
+function toString(a: any): string {
   if (typeof a === 'number') {
     if (isNaN(a) || a === Infinity || a === -Infinity) {
       return '';
