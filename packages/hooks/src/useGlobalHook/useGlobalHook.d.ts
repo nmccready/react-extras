@@ -18,6 +18,7 @@ export declare const useCustom: UseCustomFn;
 
 export type Action = <T extends any>(store: Store<T>, ..._: any) => any | void;
 export type Actions = Map<Action>;
+export type OuterAction = <T extends any>(..._: any) => any | void;
 
 export type AssociateActionsFn = <T extends any>(store: Store<T>, actions: Actions) => Actions;
 export declare const associateActions: AssociateActionsFn;
@@ -29,7 +30,7 @@ export type UseStoreFn = <T extends any>(
   initialState: T,
   actions: Actions,
   initializer?: InitializerFn
-) => UseCustomFn;
+) => [T, Map<OuterAction>];
 
 export declare const useStore: UseStoreFn;
 

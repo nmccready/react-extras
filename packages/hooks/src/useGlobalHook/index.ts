@@ -6,5 +6,5 @@ import * as _actions from './actions';
 
 const _useGlobalHook = $useGlobalHook as UseStoreFn;
 
-export const useGlobalHook = (initialState, actions: Actions = _actions) =>
-  _useGlobalHook({ useEffect }, initialState, actions);
+export const useGlobalHook = <T extends any>(initialState, actions: Actions = _actions) =>
+  _useGlobalHook<T>({ useEffect }, initialState, actions);
