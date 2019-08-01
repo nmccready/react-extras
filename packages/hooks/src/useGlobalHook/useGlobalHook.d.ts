@@ -30,7 +30,7 @@ export type UseStoreFn = <T extends any>(
   initialState: T,
   actions: Actions,
   initializer?: InitializerFn
-) => [T, Map<OuterAction>];
+) => () => [T, Map<OuterAction>];
 
 export declare const useStore: UseStoreFn;
 
