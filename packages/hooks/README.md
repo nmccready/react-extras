@@ -1,3 +1,3 @@
 # hooks
 
-Forked code from react-table to focus on modularizing some of react-table's hooks to be less react-table dependent.
+Repo for custom useful hooks which are not in [react-use](https://github.com/streamich/react-use).
