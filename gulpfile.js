@@ -1,11 +1,13 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
+const ts = require('gulp-typescript');
 const replace = require('gulp-replace');
 const rename = require('gulp-rename');
 const del = require('del');
 const program = require('commander');
 const fs = require('fs');
 const { flattenDeep } = require('lodash');
+const { compilerOptions: tsconfig } = require('./tsconfig.json');
 
 const debug = require('./debug').spawn('gulp');
 
@@ -49,10 +51,10 @@ const mapPaths = (paths = [], pack) =>
     return ret;
   });
 
-const build = (pack) => () => {
+const build = (pack, { transform = () => babel(), exts = ['js', 'ts', 'tsx'] } = {}) => () => {
   const src = mapPaths(
     flattenDeep(
-      ['js', 'ts', 'tsx'].map((ext) => [
+      exts.map((ext) => [
         `src/**/*.${ext}`,
         `!src/**/*.spec*.${ext}`,
         `!src/**/*.story*.${ext}`,
@@ -67,7 +69,7 @@ const build = (pack) => () => {
     .pipe(
       replace(/import(.*)from '@znemz\/(.*)\/src\/(.*)';/g, "import$1from '@znemz/$2/lib/$3';")
     )
-    .pipe(babel())
+    .pipe(transform())
     .pipe(gulp.dest(dest));
 };
 
@@ -83,9 +85,22 @@ const types = (pack) => () => {
     .pipe(gulp.dest(dest));
 };
 
+// babel is being used to compile the TS by default, but tsc generates the index.d.ts
+const typescript = (pack) =>
+  build(pack, {
+    transform: () =>
+      ts({
+        ...tsconfig,
+        // allowJs: true,
+        // esModuleInterop: true,
+      }),
+    exts: ['ts', 'tsx'],
+  });
+
 const buildTasks = packages.map((pack) => {
   const taskName = `build:${pack}`;
-  gulp.task(taskName, gulp.parallel(build(pack), types(pack)));
+  // build(pack)
+  gulp.task(taskName, gulp.parallel(gulp.series(build(pack), typescript(pack)), types(pack)));
   return taskName;
 });
 

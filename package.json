@@ -35,6 +35,9 @@
     "website": "yarn gulp docs && yarn gulp docs:assets && yarn x0 build docs",
     "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
+  "dependencies": {
+    "gulp-typescript": "^5.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
