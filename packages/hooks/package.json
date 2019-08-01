@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-hooks",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "React Hook for sorting",
   "keywords": [
     "react",
@@ -21,7 +21,7 @@
   ],
   "main": "lib/index.js",
   "dependencies": {
-    "@znemz/react-extras-hooks-use-sort-by": "^0.0.13",
+    "@znemz/react-extras-hooks-use-sort-by": "^0.0.14",
     "@znemz/use-global-hook": "0.1.9-0",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
