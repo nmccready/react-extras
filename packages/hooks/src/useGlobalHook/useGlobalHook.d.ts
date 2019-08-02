@@ -31,7 +31,7 @@ export declare const associateActions: AssociateActionsFn;
 
 export type Initializer<T, R> = (_: Store<T, R>) => void;
 
-export type UseStoreFn<T, R> = (
+export type UseStoreFn = <T, R>(
   React: ReactLib,
   initialState: T,
   actions: Actions<T, R>,
