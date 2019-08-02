@@ -9,36 +9,36 @@ interface ReactLib {
 }
 
 /* since use-global-hook is not ts yet, might move this to it's index.d.ts file */
-export type SetStateFn = <T extends any>(newState: T, isRef?: boolean) => void;
-export declare const setState: SetStateFn;
-export type SetRefFn = <T extends any>(newState: T) => void;
-export declare const setRef: SetRefFn;
+export type SetStateFn<T> = <T>(newState: T, isRef?: boolean) => void;
+export declare const setState: <T>(newState: T, isRef?: boolean) => void;
+export type SetRefFn<T> = <T>(newState: T) => void;
+export declare const setRef: <T>(newState: T) => void;
 
 export type UseCustomFn = (React: ReactLib) => void;
 export declare const useCustom: UseCustomFn;
 
-export type Action = <T extends any>(store: Store<T>, ..._: any) => any | void;
-export type Actions = Map<Action>;
-export type OuterAction = <T extends any>(..._: any) => any | void;
+export type Action<T> = (store: Store<T>, ..._: any) => any | void;
+export type Actions<T> = Map<Action<T>>;
+export type OuterAction<T> = (..._: any) => any | void;
 
-export type AssociateActionsFn = <T extends any>(store: Store<T>, actions: Actions) => Actions;
-export declare const associateActions: AssociateActionsFn;
+export type AssociateActionsFn<T> = <T>(store: Store<T>, actions: Actions<T>) => Actions<T>;
+export declare const associateActions: <T>(store: Store<T>, actions: Actions<T>) => Actions<T>;
 
-export type InitializerFn = <T extends any>(_: Store<T>) => void;
+export type InitializerFn<T> = <T>(_: Store<T>) => void;
 
-export type UseStoreFn = <T extends any>(
+export type UseStoreFn = <T>(
   React: ReactLib,
   initialState: T,
-  actions: Actions,
-  initializer?: InitializerFn
-) => () => [T, Map<OuterAction>];
+  actions: Actions<T>,
+  initializer?: InitializerFn<T>
+) => () => [T, Map<OuterAction<T>>];
 
 export declare const useStore: UseStoreFn;
 
 export interface Store<T> {
-  setState: SetStateFn;
-  setRef: SetRefFn;
-  actions: Actions;
+  setState: SetStateFn<T>;
+  setRef: SetRefFn<T>;
+  actions: Actions<T>;
   state: T;
 }
 

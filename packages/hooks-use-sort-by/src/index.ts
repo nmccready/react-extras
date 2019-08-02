@@ -17,7 +17,9 @@ export const SortDirections = {
   OFF: false as SortDirection,
 };
 
-export type Row = Map<any>[];
+export type Row = Map<any>;
+
+export type Rows = Row[];
 
 export type Dir = boolean | SortDirection;
 
@@ -28,17 +30,19 @@ export interface Column {
   sortType?: string | SortFunc;
   sortInverted?: boolean;
 }
-export type SortFunc = (a: any, b: any) => number;
-export type OrderByFunc = (
-  arr: Row,
-  funcs: SortFunc[],
-  dirs: Dir[],
-  sortBy: Column[] // to break cache
-) => any[];
+export type SortFunc = (a: Row, b: Row) => number;
+
+export interface OrderByProps {
+  rows: Rows;
+  funcs: SortFunc[];
+  dirs: Dir[];
+  sortBy: Column[]; // to break cache
+}
+export type OrderByFunc = (_: OrderByProps) => Rows;
 
 export interface UseSortByProps {
   doDebug?: boolean;
-  rows: Row;
+  rows: Rows;
   columns: Column[];
   orderByFn?: OrderByFunc;
   sortTypes?: Map<SortFunc>;
@@ -66,7 +70,7 @@ export function useSortBy(instance: UseSortByProps) {
   const [sortBy, setSortBy] = useState(defaultSortBy);
 
   // Updates sorting based on a columnID, desc flag and multi flag
-  const toggleSortBy = (columnID, desc, multi) => {
+  const toggleSortBy = (columnID: string, desc: SortDirection, multi?: boolean) => {
     return setSortBy((oldSortBy) => {
       // Find the column for this columnID
       const column = columns.find((d) => d.id === columnID);
@@ -152,12 +156,12 @@ export function useSortBy(instance: UseSortByProps) {
       // Use the orderByFn to compose multiple sortBy's together.
       // This will also perform a stable sorting using the row index
       // if needed.
-      const sortedData = orderByFn(
-        _rows,
-        getSortFuncs({ sortBy, columns, userSortTypes }),
-        getSortDirs(sortBy, columns),
-        sortBy
-      );
+      const sortedData = orderByFn({
+        rows: _rows,
+        funcs: getSortFuncs({ sortBy, columns, userSortTypes }),
+        dirs: getSortDirs(sortBy, columns),
+        sortBy,
+      });
 
       // If there are sub-rows, sort them
       sortedData.forEach((row) => {
@@ -223,7 +227,7 @@ export const getSortFuncs = ({ sortBy, columns, userSortTypes }: GetSortFuncsOpt
       sortTypes.alphanumeric;
 
     // Return the correct sortFn
-    return (a, b) => {
+    return <T>(a: T, b: T) => {
       return sortMethod(a[sort.id], b[sort.id], sort.desc);
     };
   });
@@ -232,33 +236,32 @@ export const getSortFuncs = ({ sortBy, columns, userSortTypes }: GetSortFuncsOpt
 Note: this function does not support Multi Sort due to GTFO sortInt !== 0
 
 It's not really needed at this point so I am moving on.
+
 */
-export const defaultOrderByFn: OrderByFunc = memoize(
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-  (arr, funcs, dirs, sortBy) => {
-    return [...arr].sort((rowA, rowB) => {
-      for (let i = 0; i < funcs.length; i++) {
-        const sortFn = funcs[i];
-        const desc = dirs[i] === false || dirs[i] === SortDirections.DSC;
-        const sortInt = sortFn(rowA, rowB);
-        if (sortInt !== 0) {
-          return desc ? -sortInt : sortInt;
-        }
+// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+const _defaultOrderByFn: OrderByFunc = ({ rows, funcs, dirs, sortBy }: OrderByProps) => {
+  return [...rows].sort((rowA, rowB): number => {
+    for (let i = 0; i < funcs.length; i++) {
+      const sortFn = funcs[i];
+      const desc = dirs[i] === false || dirs[i] === SortDirections.DSC;
+      const sortInt = sortFn(rowA, rowB);
+      if (sortInt !== 0) {
+        return desc ? -sortInt : sortInt;
       }
-      return dirs[0] ? rowA.index - rowB.index : rowB.index - rowA.index;
-    });
+    }
+    // @ts-ignore
+    return dirs[0] ? rowA.index - rowB.index : rowB.index - rowA.index;
+  });
+};
+
+export const defaultOrderByFn: OrderByFunc = memoize(_defaultOrderByFn, {
+  normalizer: (args) => {
+    // we don't care about normalizing the funcs as they should be the same
+    // as the first time through
+    const { funcs, ...toCache } = args[0];
+    return JSON.stringify(toCache);
   },
-  {
-    normalizer: (args) => {
-      // we don't care about normalizing the funcs as they should be the same
-      // as the first time through
-      const arryStr = JSON.stringify(args[0]);
-      const dirStr = JSON.stringify(args[2]);
-      const sortByStr = JSON.stringify(args[3]);
-      return arryStr.concat(dirStr, sortByStr);
-    },
-  }
-);
+});
 
 export function isFunction(a) {
   if (typeof a === 'function') {
