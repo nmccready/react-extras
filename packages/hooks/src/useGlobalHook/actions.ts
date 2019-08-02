@@ -1,9 +1,9 @@
-import { Action } from './useGlobalHook';
+import { ActionFn } from './useGlobalHook';
 
-export const setState: Action = (store, state) => {
+export const setState: ActionFn = (store, state) => {
   store.setState(state);
 };
 
-export const setRef: Action = (store, state) => {
+export const setRef: ActionFn = (store, state) => {
   store.setRef(state);
 };

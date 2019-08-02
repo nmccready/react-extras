@@ -9,36 +9,46 @@ interface ReactLib {
 }
 
 /* since use-global-hook is not ts yet, might move this to it's index.d.ts file */
-export type SetStateFn<T> = <T>(newState: T, isRef?: boolean) => void;
+export type SetStateFn<T> = (newState: T, isRef?: boolean) => void;
 export declare const setState: <T>(newState: T, isRef?: boolean) => void;
-export type SetRefFn<T> = <T>(newState: T) => void;
+export type SetRefFn<T> = (newState: T) => void;
 export declare const setRef: <T>(newState: T) => void;
 
 export type UseCustomFn = (React: ReactLib) => void;
 export declare const useCustom: UseCustomFn;
 
-export type Action<T> = (store: Store<T>, ..._: any) => any | void;
-export type Actions<T> = Map<Action<T>>;
-export type OuterAction<T> = (..._: any) => any | void;
+export type Action<T, R> = (store: Store<T, R>, ..._: any) => R | void;
+// for defining functions for inference
+export type ActionFn = <T, R>(store: Store<T, R>, ..._: any) => R | void;
+export type Actions<T, R> = Map<Action<T, R>>;
+export type OuterAction<T, R> = (..._: any) => R | void;
 
-export type AssociateActionsFn<T> = <T>(store: Store<T>, actions: Actions<T>) => Actions<T>;
-export declare const associateActions: <T>(store: Store<T>, actions: Actions<T>) => Actions<T>;
+export type AssociateActionsFn = <T, R>(
+  store: Store<T, R>,
+  actions: Actions<T, R>
+) => Actions<T, R>;
+export declare const associateActions: AssociateActionsFn;
 
-export type InitializerFn<T> = <T>(_: Store<T>) => void;
+export type Initializer<T, R> = (_: Store<T, R>) => void;
 
-export type UseStoreFn = <T>(
+export type UseStoreFn<T, R> = (
   React: ReactLib,
   initialState: T,
-  actions: Actions<T>,
-  initializer?: InitializerFn<T>
-) => () => [T, Map<OuterAction<T>>];
+  actions: Actions<T, R>,
+  initializer?: Initializer<T, R>
+) => () => [T, Map<OuterAction<T, R>>];
 
-export declare const useStore: UseStoreFn;
+export declare const useStore: <T, R>(
+  React: ReactLib,
+  initialState: T,
+  actions: Actions<T, R>,
+  initializer?: Initializer<T, R>
+) => () => [T, Map<OuterAction<T, R>>];
 
-export interface Store<T> {
+export interface Store<T, R> {
   setState: SetStateFn<T>;
   setRef: SetRefFn<T>;
-  actions: Actions<T>;
+  actions: Actions<T, R>;
   state: T;
 }
 
