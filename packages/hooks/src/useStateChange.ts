@@ -1,11 +1,11 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 
-export type OnChangeFn = (_: any) => void;
+export type OnChangeFn<T> = (_: T) => void;
 export type Comparator = (a: any, b: any) => boolean;
 
-export const useStateChangeFact = (comparator?: Comparator) => <S extends any>(
-  initialState,
-  onChange: OnChangeFn
+export const useStateChangeFact = <S>(comparator?: Comparator) => <S>(
+  initialState: S,
+  onChange?: OnChangeFn<S>
 ): [S, Dispatch<SetStateAction<S>>] => {
   const [state, setState] = useState(initialState);
 
