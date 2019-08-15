@@ -1,5 +1,4 @@
 import { EffectCallback, DependencyList, Dispatch, SetStateAction } from 'react';
-import { Map } from '..';
 
 export type UseEffect = (effect: EffectCallback, deps?: DependencyList) => void;
 export type UseState = <S>(initialState: S | (() => S)) => [S, Dispatch<SetStateAction<S>>];
@@ -17,38 +16,29 @@ export declare const setRef: <T>(newState: T) => void;
 export type UseCustomFn = (React: ReactLib) => void;
 export declare const useCustom: UseCustomFn;
 
-export type Action<T, R> = (store: Store<T, R>, ..._: any) => R | void;
-// for defining functions for inference
-export type ActionFn = <T, R>(store: Store<T, R>, ..._: any) => R | void;
-export type Actions<T, R> = Map<Action<T, R>>;
-export type OuterAction<T, R> = (..._: any) => R | void;
-
-export type AssociateActionsFn = <T, R>(
-  store: Store<T, R>,
-  actions: Actions<T, R>
-) => Actions<T, R>;
+export type AssociateActionsFn = <T, A>(store: Store<T, A>, actions: A) => A;
 export declare const associateActions: AssociateActionsFn;
 
-export type Initializer<T, R> = (_: Store<T, R>) => void;
+export type Initializer<T, A> = (_: Store<T, A>) => void;
 
-export type UseStoreFn = <T, R>(
+export type UseStoreFn = <T, InnerA, OuterA>(
   React: ReactLib,
   initialState: T,
-  actions: Actions<T, R>,
-  initializer?: Initializer<T, R>
-) => () => [T, Map<OuterAction<T, R>>];
+  actions: InnerA,
+  initializer?: Initializer<T, InnerA>
+) => () => [T, OuterA];
 
-export declare const useStore: <T, R>(
+export declare const useStore: <T, InnerA, OuterA>(
   React: ReactLib,
   initialState: T,
-  actions: Actions<T, R>,
-  initializer?: Initializer<T, R>
-) => () => [T, Map<OuterAction<T, R>>];
+  actions: InnerA,
+  initializer?: Initializer<T, InnerA>
+) => () => [T, OuterA];
 
-export interface Store<T, R> {
+export interface Store<T, A> {
   setState: SetStateFn<T>;
   setRef: SetRefFn<T>;
-  actions: Actions<T, R>;
+  actions: A;
   state: T;
 }
 
