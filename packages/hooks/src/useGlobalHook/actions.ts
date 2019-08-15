@@ -1,9 +1,9 @@
-import { ActionFn } from './useGlobalHook';
+import { Store } from './useGlobalHook';
 
-export const setState: ActionFn = (store, state) => {
-  store.setState(state);
+export const setState = <T>(store: Store<T, void, T>, newState: T) => {
+  store.setState(newState);
 };
 
-export const setRef: ActionFn = (store, state) => {
-  store.setRef(state);
+export const setRef = <T>(store: Store<T, void, T>, newState: T) => {
+  store.setRef(newState);
 };
