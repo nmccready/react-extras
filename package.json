@@ -35,9 +35,6 @@
     "website": "yarn gulp docs && yarn gulp docs:assets && yarn x0 build docs",
     "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
-  "dependencies": {
-    "gulp-typescript": "^5.0.1"
-  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -83,6 +80,7 @@
     "gulp-eslint": "^4",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1",
+    "gulp-typescript": "^5.0.1",
     "jest": "^24.8",
     "jest-cli": "^24.8",
     "jest-css-modules-transform": "^2.5.0",
