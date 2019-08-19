@@ -1,12 +1,11 @@
 {
   "name": "@znemz/react-extras-hooks",
   "version": "0.0.20",
-  "description": "React Hook for sorting",
+  "description": "react extra hooks",
   "keywords": [
     "react",
-    "react-table",
-    "sorting",
-    "table"
+    "hooks",
+    "extras"
   ],
   "repository": {
     "type": "git",
@@ -30,6 +29,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "90dc96976f83d9fcf61b4a361f1b8c5184f4a460",
-  "originalAuthor": "Tanner Linsley"
+  "gitHead": "90dc96976f83d9fcf61b4a361f1b8c5184f4a460"
 }

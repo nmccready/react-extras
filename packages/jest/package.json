@@ -1,12 +1,11 @@
 {
   "name": "@znemz/react-extras-jest",
   "version": "0.0.20",
-  "description": "React Hook for sorting",
+  "description": "common jest setup dependencies and extras",
   "keywords": [
-    "react",
-    "react-table",
-    "sorting",
-    "table"
+    "jest",
+    "jest-extended",
+    "jest-expect-message"
   ],
   "repository": {
     "type": "git",
@@ -35,6 +34,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "90dc96976f83d9fcf61b4a361f1b8c5184f4a460",
-  "originalAuthor": "Tanner Linsley"
+  "gitHead": "a391a0a759dd65f780fafefa4e62479f2d717250"
 }
