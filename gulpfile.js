@@ -67,7 +67,10 @@ const build = (pack, { transform = () => babel(), exts = ['js', 'ts', 'tsx'] } =
   return gulp
     .src(src)
     .pipe(
-      replace(/import(.*)from '@znemz\/(.*)\/src\/(.*)';/g, "import$1from '@znemz/$2/lib/$3';")
+      replace(
+        /(import|export)(.*)from '@znemz\/(.*)\/src\/(.*)';/g,
+        "$1$2from '@znemz/$3/lib/$4';"
+      )
     )
     .pipe(transform())
     .pipe(gulp.dest(dest));
@@ -80,7 +83,10 @@ const types = (pack) => () => {
   return gulp
     .src(src)
     .pipe(
-      replace(/import(.*)from '@znemz\/(.*)\/src\/(.*)';/g, "import$1from '@znemz/$2/lib/$3';")
+      replace(
+        /(import|export)(.*)from '@znemz\/(.*)\/src\/(.*)';/g,
+        "$1$2from '@znemz/$3/lib/$4';"
+      )
     )
     .pipe(gulp.dest(dest));
 };

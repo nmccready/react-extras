@@ -1,4 +1,4 @@
-import testHook from 'TestHook';
+import { testHook } from '@znemz/react-extras-jest';
 import { useStateChange } from '.';
 
 describe(useStateChange.name, () => {

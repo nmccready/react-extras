@@ -5,10 +5,12 @@
 // See:
 // https://github.com/facebook/jest/issues/2663#issuecomment-317109798
 //---------------------------------------------------------------------
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export const assetTransformer = {
   process(src, filename /* , config, options */) {
     return `module.exports = ${JSON.stringify(path.basename(filename))}`;
   },
 };
+
+export default assetTransformer;

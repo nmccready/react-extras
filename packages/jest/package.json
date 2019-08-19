@@ -19,6 +19,7 @@
     "lib",
     "debug.js"
   ],
+  "main": "src/index.js",
   "dependencies": {
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-plugin-jest": "^22.3.2",

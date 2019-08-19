@@ -6,7 +6,7 @@ const TestHook = ({ callback }) => {
   return null;
 };
 
-const testHook = (callback) => {
+export const testHook = (callback) => {
   create(<TestHook callback={callback} />);
 };
 
