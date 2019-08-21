@@ -54,7 +54,6 @@
     "@types/react": "^16.8.19",
     "@typescript-eslint/eslint-plugin": "^1.11",
     "@typescript-eslint/parser": "^1.11",
-    "@znemz/react-extras-jest": "0.0.19",
     "babel-eslint": "^10.0.1",
     "babel-plugin-minify-mangle-names": "^0.5.0",
     "babel-plugin-module-resolver": "^3.2.0",
