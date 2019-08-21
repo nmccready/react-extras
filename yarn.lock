@@ -2351,6 +2351,15 @@
     mkdirp-promise "^5.0.1"
     mz "^2.5.0"
 
+"@znemz/react-extras-jest@0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@znemz/react-extras-jest/-/react-extras-jest-0.0.19.tgz#04f94ff9dacdb5148516869f9c4f4477e51c0e2b"
+  integrity sha512-7B4Eqab7j74fX6rfTDPIYrs+3pEr8nV+Qk7TieF9BSmpPquR8jhrGdweZd3L3vo0dLFUAX9JLwvH5A6zxqZB2Q==
+  dependencies:
+    lodash "^4.17.11"
+    memoizee "^0.4.14"
+    react "^16.8"
+
 "@znemz/use-global-hook@^0.1.9":
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/@znemz/use-global-hook/-/use-global-hook-0.1.9.tgz#a2089a40ae83958dcb91634646dbc2b042a9da39"

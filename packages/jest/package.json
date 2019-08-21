@@ -4,8 +4,8 @@
   "description": "common jest setup dependencies and extras",
   "keywords": [
     "jest",
-    "jest-extended",
-    "jest-expect-message"
+    "jest-expect-message",
+    "jest-extended"
   ],
   "repository": {
     "type": "git",

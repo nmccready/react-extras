@@ -3,9 +3,9 @@
   "version": "0.0.21",
   "description": "react extra hooks",
   "keywords": [
-    "react",
+    "extras",
     "hooks",
-    "extras"
+    "react"
   ],
   "repository": {
     "type": "git",
