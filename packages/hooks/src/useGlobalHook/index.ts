@@ -1,22 +1,25 @@
 import { useState, useEffect } from 'react';
-import $useGlobalHook, { UseStoreFn, Initializer } from '@znemz/use-global-hook';
+import $useGlobalHook, { Initializer } from '@znemz/use-global-hook';
 
-import * as base from './actions';
+import { InnerBaseActions } from '@znemz/use-global-hook/lib/actions';
 
-const _useGlobalHook: UseStoreFn = $useGlobalHook;
+export interface OurUseStoreProps<T, InnerA, OuterA, WorkR> {
+  initialState?: T;
+  actions?: InnerA | InnerBaseActions<T>;
+  initializer?: Initializer<T, OuterA>;
+  hookWork?: () => WorkR;
+}
 
-export const useGlobalHook = <
-  T,
-  InnerA = base.InnerBaseActions<T>,
-  OuterA = base.OuterBaseActions<T>
->(
+export const useGlobalHook = <T, InnerA, OuterA, WorkR>({
   initialState,
-  actions: InnerA = (base as unknown) as InnerA,
-  initializer?: Initializer<T, InnerA>
-) =>
-  _useGlobalHook<T, InnerA, OuterA>(
-    { useState, useEffect },
+  actions,
+  initializer,
+  hookWork,
+}: OurUseStoreProps<T, InnerA, OuterA, WorkR>) =>
+  $useGlobalHook({
+    React: { useState, useEffect },
     initialState,
     actions,
-    initializer
-  );
+    initializer,
+    hookWork,
+  });
