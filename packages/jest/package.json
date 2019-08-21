@@ -20,6 +20,8 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/jest-expect-message": "^1.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-plugin-jest": "^22.3.2",
     "jest": "^24.8",
