@@ -2457,10 +2457,10 @@
     "@znemz/js-common-debug-clone" "^0.0.20"
     debug-fabulous "^1.1.0"
 
-"@znemz/use-global-hook@^1.0.0-0":
-  version "1.0.0-0"
-  resolved "https://registry.yarnpkg.com/@znemz/use-global-hook/-/use-global-hook-1.0.0-0.tgz#244202b301047fed2d5822f7993db13566e7dae7"
-  integrity sha512-/OGmSiPfFUjrky9IGOIdZVXbbJa6uqa22s5FiiNwbNoknL9WhmrFgrEiZWE4ACPNhDfpkhRg3jCRqeoscHpWEQ==
+"@znemz/use-global-hook@^1.0.0-1":
+  version "1.0.0-1"
+  resolved "https://registry.yarnpkg.com/@znemz/use-global-hook/-/use-global-hook-1.0.0-1.tgz#49b02b6e25d35b30fbc897cb43688e214ff898fe"
+  integrity sha512-LK4FkIOJA/fZILrg/RDRa9KxJO45F2O0bpEKlkL0q9OdKYlC1w3uqZj3eKdP3cWXAXBh9c/1XXEaOujI9FBU6A==
 
 JSONStream@^1.0.4, JSONStream@^1.3.4:
   version "1.3.5"
