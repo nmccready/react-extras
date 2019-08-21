@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-hooks",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "react extra hooks",
   "keywords": [
     "extras",
@@ -20,7 +20,7 @@
   ],
   "main": "lib/index.js",
   "dependencies": {
-    "@znemz/react-extras-hooks-use-sort-by": "^0.0.21",
+    "@znemz/react-extras-hooks-use-sort-by": "^0.0.22",
     "@znemz/use-global-hook": "^0.1.9",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
