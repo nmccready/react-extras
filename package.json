@@ -23,7 +23,7 @@
     "clean:node_modules": "lerna exec --parallel 'rm -rf node_modules' && rm -rf node_modules",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js packages --color",
-    "prepare": "yarn js-common-gulp-monorepo-typescript-clone && yarn sort-package-json && yarn lerna exec --parallel sort-package-json",
+    "prepare": "yarn js-common-gulpfile-monorepo-typescript-clone && yarn sort-package-json && yarn lerna exec --parallel sort-package-json",
     "prepublishOnly": "yarn build",
     "scope": "yarn lerna exec --scope",
     "start": "lerna exec --parallel yarn start",
@@ -31,7 +31,7 @@
     "test": "yarn jest",
     "test:ci": "yarn lint && yarn test --coverage",
     "website": "yarn gulp docs && yarn gulp docs:assets && yarn x0 build docs",
-    "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'",
+    "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -45,7 +45,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/types": "^7.4.0",
-    "@znemz/js-common-gulp-monorepo-typescript-clone": "^0.0.20",
     "@compositor/logo": "^1.4.0",
     "@compositor/x0": "^6.0.7",
     "@types/lodash": "^4.14.134",
@@ -53,6 +52,7 @@
     "@types/react": "^16.8.19",
     "@typescript-eslint/eslint-plugin": "^1.11",
     "@typescript-eslint/parser": "^1.11",
+    "@znemz/js-common-gulpfile-monorepo-typescript-clone": "^0.0.20",
     "babel-eslint": "^10.0.1",
     "babel-plugin-minify-mangle-names": "^0.5.0",
     "babel-plugin-module-resolver": "^3.2.0",

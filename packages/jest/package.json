@@ -36,5 +36,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bbbdc36ef8f63af075ae44ff55e49a78865bd9d5"
+  "gitHead": "bbbdc36ef8f63af075ae44ff55e49a78865bd9d5",
+  "gulp": {
+    "opts": {
+      "doBabel": true,
+      "doTs": true,
+      "doTypes": false,
+      "doSeries": false
+    }
+  }
 }
