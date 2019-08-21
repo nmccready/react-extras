@@ -18,3 +18,4 @@ dist
 .docz
 .history
 public
+gulpfile.js
