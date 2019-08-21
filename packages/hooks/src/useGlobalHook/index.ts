@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import $useGlobalHook from '@znemz/use-global-hook';
-import { UseStoreFn, Initializer } from './useGlobalHook';
+import $useGlobalHook, { UseStoreFn, Initializer } from '@znemz/use-global-hook';
 
 import * as base from './actions';
 

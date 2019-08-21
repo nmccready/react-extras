@@ -2360,10 +2360,10 @@
     memoizee "^0.4.14"
     react "^16.8"
 
-"@znemz/use-global-hook@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@znemz/use-global-hook/-/use-global-hook-0.1.9.tgz#a2089a40ae83958dcb91634646dbc2b042a9da39"
-  integrity sha512-wa62gCXzbEusWYuhlNr7nPSRF9rPRIvfKflREkN+fipHIXn/80z89c5p88mqQsctNE1yH2eqLTgbJdxlE0GmiQ==
+"@znemz/use-global-hook@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@znemz/use-global-hook/-/use-global-hook-0.1.11.tgz#89472efe4169d089f62d1b8365e8a4bbd6e11df1"
+  integrity sha512-aKdwCVqA4XCek2VbYVX8SqOuEiOAOdZpR5tj3EsoQYKivi0WavecvESe7qco8yYLx0xMAOEtRITaIIgPVF0BKw==
 
 JSONStream@^1.0.4, JSONStream@^1.3.4:
   version "1.3.5"

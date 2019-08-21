@@ -1,4 +1,4 @@
-import { Store } from './useGlobalHook';
+import { Store } from '@znemz/use-global-hook';
 
 export interface OuterBaseActions<T> {
   setState: (newState: T) => void;
