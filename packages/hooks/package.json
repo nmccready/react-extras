@@ -21,7 +21,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@znemz/react-extras-hooks-use-sort-by": "^1.0.1",
-    "@znemz/use-global-hook": "^1.0.1",
+    "@znemz/use-global-hook": "^1.1.0",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
     "react": "^16.8"

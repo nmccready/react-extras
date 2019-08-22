@@ -34,7 +34,7 @@
       "doBabel": true,
       "doTs": true,
       "doTypes": false,
-      "doSeries": false
+      "doSeries": true
     }
   },
   "originalAuthor": "Tanner Linsley"
