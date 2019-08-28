@@ -13,7 +13,7 @@ const debug = require('../debug').spawn('components:Grid:Sortable');
 
 export interface SortableGridProps {
   data: Data;
-  defaultSortDir: Map<SortDirection>;
+  defaultSortDir: Record<string, SortDirection>;
   sortColumns: SortColumn[];
   defaultSortBy: SortColumn[];
   columnsMap: ColumnsMap;

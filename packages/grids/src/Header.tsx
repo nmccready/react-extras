@@ -2,11 +2,11 @@ import React, { PropsWithChildren } from 'react';
 import '@emotion/core';
 import cx from 'classnames';
 import { get, noop, merge } from 'lodash';
-import { Icon, SemanticICONS } from 'semantic-ui-react';
 import { SortDirection, SortDirections } from '@znemz/react-extras-hooks-use-sort-by';
 import { useToggle } from '@znemz/react-extras-hooks';
 
 import { ColumnsMap } from '.';
+import Caret from './Caret';
 
 export interface OnSortProps {
   direction: SortDirection;
@@ -17,9 +17,9 @@ export interface OnSortProps {
 export interface HeaderItemProps {
   text: string;
   index: number;
-  sortDirs?: Map<SortDirection>;
+  sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
-  less?: CssType;
+  less?: Record<string, any>;
   name?: string;
 }
 
@@ -57,14 +57,7 @@ export const HeaderItem = ({
           onSort({ direction: newSortDir, index, columnName: name || text });
         }}
       >
-        <Icon
-          disabled={sortDir === false}
-          name={
-            `caret ${
-              SortDirections.ASC === sortDir || sortDir === false ? 'up' : 'down'
-            }` as SemanticICONS
-          }
-        />
+        <Caret sortDirection={sortDir} />
         {text}
       </div>
     );
@@ -94,9 +87,9 @@ export const HeaderItem = ({
 };
 
 export interface HeaderProps {
-  style?: Style;
+  style?: Record<string, any>;
   columnsMap: ColumnsMap;
-  sortDirs?: Map<SortDirection>;
+  sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
 }
 

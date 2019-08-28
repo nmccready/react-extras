@@ -33,7 +33,7 @@ export interface GridProps<T> {
   headerCushion?: number;
   columnsMap: ColumnsMap;
   rowRenderer?: RowRenderer;
-  sortDirs?: Map<SortDirection>;
+  sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
 }
 

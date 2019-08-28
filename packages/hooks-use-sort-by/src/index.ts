@@ -3,12 +3,6 @@ import memoize from 'memoizee';
 
 import * as sortTypes from './sortTypes';
 
-/*
-  Not using our Map, as this should be given to react-table
-  or put in it's own hook lib.
-*/
-export type Map<T> = { [K in string]?: T };
-
 export type SortDirection = 'ASC' | 'DSC' | false;
 
 export const SortDirections = {
@@ -17,7 +11,7 @@ export const SortDirections = {
   OFF: false as SortDirection,
 };
 
-export type Row = Map<any>;
+export type Row = Record<string, any>;
 
 export type Rows = Row[];
 
@@ -45,7 +39,7 @@ export interface UseSortByProps {
   rows: Rows;
   columns: Column[];
   orderByFn?: OrderByFunc;
-  sortTypes?: Map<SortFunc>;
+  sortTypes?: Record<string, SortFunc>;
   manualSorting?: boolean;
   disableSortRemove?: boolean;
   disableMultiRemove?: boolean;
@@ -205,7 +199,7 @@ export const getSortDirs = (sortBy: Column[], columns: Column[]) => {
 interface GetSortFuncsOpts {
   sortBy: Column[];
   columns: Column[];
-  userSortTypes: Map<SortFunc>;
+  userSortTypes: Record<string, SortFunc>;
 }
 
 export const getSortFuncs = ({ sortBy, columns, userSortTypes }: GetSortFuncsOpts) =>

@@ -8,7 +8,7 @@ export interface CellProps {
   data: Data;
   columnIndex: number;
   rowIndex: number;
-  style: Style;
+  style: Record<string, any>;
 }
 
 export interface RowRenderProps {
