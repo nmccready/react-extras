@@ -8,7 +8,6 @@
     "react"
   ],
   "repository": {
-    "type": "git",
     "url": "https://github.com/nmccready/react-extras/packages/hooks"
   },
   "license": "MIT",

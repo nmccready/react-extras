@@ -8,8 +8,7 @@
     "jest-extended"
   ],
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nmccready/hooks.git"
+    "url": "https://github.com/nmccready/react-extras/packages/jest"
   },
   "license": "MIT",
   "author": "Nicholas McCready",

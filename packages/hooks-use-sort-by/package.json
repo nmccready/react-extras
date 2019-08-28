@@ -9,7 +9,6 @@
     "table"
   ],
   "repository": {
-    "type": "git",
     "url": "https://github.com/nmccready/react-extras/packages/hooks-use-sort-by"
   },
   "license": "MIT",

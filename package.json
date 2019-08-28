@@ -23,7 +23,7 @@
     "clean:node_modules": "lerna exec --parallel 'rm -rf node_modules' && rm -rf node_modules",
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js packages --color",
-    "prepare": "yarn js-common-gulpfile-monorepo-typescript-clone && yarn js-common-tsconfig-mono-react-clone && yarn sort-package-json && yarn lerna exec --parallel sort-package-json && lerna exec --parallel yarn prepare",
+    "prepare": "yarn js-common-gulpfile-monorepo-typescript-clone && yarn js-common-tsconfig-mono-react-clone && yarn sort-package-json && yarn js-common-debug-clone && yarn lerna exec --parallel sort-package-json && lerna exec --parallel yarn prepare",
     "prepublishOnly": "yarn build",
     "scope": "yarn lerna exec --scope",
     "start": "lerna exec --parallel yarn start",
@@ -92,7 +92,7 @@
     "rimraf": "^2.6.2",
     "sort-package-json": "^1.21.0",
     "styled-components": "^4.3.2",
-    "typescript": "^3.5.1"
+    "typescript": "3.5.X"
   },
   "engines": {
     "node": ">=8",
