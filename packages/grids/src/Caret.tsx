@@ -7,7 +7,7 @@ export interface CaretProps {
 }
 
 const myCss = {
-  '&i.caret': {
+  '&.caret': {
     border: 'solid white',
     borderWidth: '0 3px 3px 0',
     display: 'inline-block',
