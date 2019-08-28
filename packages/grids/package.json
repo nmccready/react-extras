@@ -1,15 +1,16 @@
 {
-  "name": "@znemz/react-extras-hooks",
+  "name": "@znemz/react-extras-grids",
   "version": "1.1.2",
-  "description": "react extra hooks",
+  "description": "react extra grids",
   "keywords": [
     "extras",
-    "hooks",
+    "grid",
+    "grids",
     "react"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nmccready/react-extras/packages/hooks"
+    "url": "https://github.com/nmccready/react-extras/packages/grid"
   },
   "license": "MIT",
   "author": "Nicholas McCready",
@@ -19,12 +20,17 @@
     "debug.js"
   ],
   "main": "lib/index.js",
+  "scripts": {
+    "prepare": "yarn js-common-tsconfig-mono-react-clone"
+  },
   "dependencies": {
+    "@emotion/core": "^10.0.15",
     "@znemz/react-extras-hooks-use-sort-by": "^1.1.2",
-    "@znemz/use-global-hook": "^1.1.8",
-    "lodash": "^4.17.11",
-    "memoizee": "^0.4.14",
-    "react": "^16.8"
+    "classnames": "^2.2.6",
+    "react": "^16.8",
+    "react-dom": "^16.8",
+    "react-virtualized-auto-sizer": "^1.0.2",
+    "react-window": "^1.8.5"
   },
   "publishConfig": {
     "access": "public"

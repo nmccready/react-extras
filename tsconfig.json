@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "jsx": "react",
+    "esModuleInterop": true,
     "removeComments": false,
     "noLib": false,
     "emitDecoratorMetadata": true,
@@ -11,6 +13,7 @@
     "declaration": true,
     "noResolve": false,
     "moduleResolution": "node",
-    "outDir": ".tmp"
+    "outDir": ".tmp",
+    "rootDir": "packages"
   }
 }

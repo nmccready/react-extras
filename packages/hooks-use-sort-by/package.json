@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nmccready/hooks.git"
+    "url": "https://github.com/nmccready/react-extras/packages/hooks-use-sort-by"
   },
   "license": "MIT",
   "author": "Nicholas McCready",
