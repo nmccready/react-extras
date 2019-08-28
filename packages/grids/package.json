@@ -21,7 +21,7 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "prepare": "yarn js-common-tsconfig-react-clone && yarn jest-config-mono-package-clone"
+    "prepare": "yarn js-common-tsconfig-react-clone && yarn js-common-jest-config-mono-package-clone"
   },
   "dependencies": {
     "@emotion/core": "^10.0.15",
@@ -34,6 +34,7 @@
     "react-window": "^1.8.5"
   },
   "devDependencies": {
+    "@znemz/js-common-jest-config-mono-package-clone": "^0.0.25",
     "@znemz/js-common-tsconfig-react-clone": "^0.0.25"
   },
   "publishConfig": {

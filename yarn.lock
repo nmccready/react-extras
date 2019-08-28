@@ -2523,6 +2523,13 @@
     "@znemz/js-common-cpy-cli" "^0.0.25"
     "@znemz/js-common-gulp-monorepo-typescript" "^0.0.25"
 
+"@znemz/js-common-jest-config-mono-package-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-jest-config-mono-package-clone/-/js-common-jest-config-mono-package-clone-0.0.25.tgz#567d1b2efe7874e0d0786cde96fd1af05b46c151"
+  integrity sha512-UitU0OSUXRCigfV13lUxIbDOZzuAYsP+ab8Ux5IpbkP3sBzklGS+uMifCMbUTFkHnS+liPEc0hFM1AYjSHcqAg==
+  dependencies:
+    "@znemz/js-common-cpy-cli" "^0.0.25"
+
 "@znemz/js-common-tsconfig-clone@^0.0.25":
   version "0.0.25"
   resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-clone/-/js-common-tsconfig-clone-0.0.25.tgz#4efef846efc6518429999ba20ff5a3efc2cbd87d"
