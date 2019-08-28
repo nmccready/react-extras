@@ -1,8 +1,7 @@
-import { SortDirection } from '@znemz/react-extras-hooks-use-sort-by';
+import { SortDirection, SortDirections } from '@znemz/react-extras-hooks-use-sort-by';
 import cx from 'classnames';
 import '@emotion/core';
 import React from 'react';
-import { SortDirections } from '../../hooks-use-sort-by/lib';
 
 export interface CaretProps {
   sortDirection: SortDirection;
