@@ -24,7 +24,7 @@
     "jest": "node -r esm ./node_modules/.bin/jest",
     "lint": "eslint --ext .js,.ts,.tsx *.js packages --color",
     "prepare": "yarn js-common-gulpfile-monorepo-typescript-clone && yarn js-common-tsconfig-mono-react-clone && yarn sort-package-json && yarn js-common-debug-clone && yarn lerna exec --parallel sort-package-json && lerna exec --parallel yarn prepare",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint && yarn build",
     "scope": "yarn lerna exec --scope",
     "start": "lerna exec --parallel yarn start",
     "start:dev": "concurrently -k -r -s first \"yarn test --watch\" \"yarn start\"",

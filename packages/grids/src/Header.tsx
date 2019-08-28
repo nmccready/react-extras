@@ -65,16 +65,18 @@ export const HeaderItem = ({
 
   return (
     <div
-      css={css(merge(
-        {
-          '& > div': {
-            cursor: 'pointer',
-            width: '100%', // more for pointer
-            textAlign: 'center',
+      css={css(
+        merge(
+          {
+            '& > div': {
+              cursor: 'pointer',
+              width: '100%', // more for pointer
+              textAlign: 'center',
+            },
           },
-        },
-        less
-      ))}
+          less
+        )
+      )}
       className={cx(
         'HeaderItem',
         `Column${index + 1}`,
