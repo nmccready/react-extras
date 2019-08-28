@@ -2476,33 +2476,33 @@
     mkdirp-promise "^5.0.1"
     mz "^2.5.0"
 
-"@znemz/js-common-cpy-cli@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-cpy-cli/-/js-common-cpy-cli-0.0.24.tgz#b3c298b558c321542d8a0b539d397e9465612b3d"
-  integrity sha512-Te/6Ge5i5Am5asWMszX1I4MsV24lnKFcTNdwZTKuZ1WQjmm1kD9321IIs1NRhsVz1LKlLzvcjGvsbzcJzrf2yw==
+"@znemz/js-common-cpy-cli@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-cpy-cli/-/js-common-cpy-cli-0.0.25.tgz#151e4c46aa0031f2d44b32398edf14b9b8261659"
+  integrity sha512-sEUQwlrMpzkqaMRVC+scNeXG/tmVEytw0xQ/2r+SuCGNvnWjoHURWtozEKS4uxhLjgKjWcDLmLzlNyPL+LQGww==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@znemz/js-common-debug-clone" "^0.0.24"
-    "@znemz/js-common-tsconfig-clone" "^0.0.24"
+    "@znemz/js-common-debug-clone" "^0.0.25"
+    "@znemz/js-common-tsconfig-clone" "^0.0.25"
     commander "^3.0.0"
     cpy "^7"
     cpy-cli "^2.0.0"
     debug-fabulous "^1.1.0"
 
-"@znemz/js-common-debug-clone@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-debug-clone/-/js-common-debug-clone-0.0.24.tgz#72b2d65c37ebcf1c97f5e37e9a8ef180c0b0b0a2"
-  integrity sha512-iRnEqqOmraI25DyB7sOWIR5KJM4OV5chhNO8j1UU1Kn7ulf06nPqkiHsRlyOOGakROtKXmffxBTa4/Do/6bYLg==
+"@znemz/js-common-debug-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-debug-clone/-/js-common-debug-clone-0.0.25.tgz#0f5c3094fa67942e7a1cf843e9777cab73678237"
+  integrity sha512-FtuklJlRmdyn8fx/yXydnz0BDRfy2HhPDokqwXqLKG2VN1G8ApHzn5NO0eLrEq80nn4Pdbl1wsk7yga18EBcKw==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.24"
+    "@znemz/js-common-cpy-cli" "^0.0.25"
     debug-fabulous "^1.1.0"
 
-"@znemz/js-common-gulp-monorepo-typescript@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulp-monorepo-typescript/-/js-common-gulp-monorepo-typescript-0.0.24.tgz#5cc4a5bc98ae6d1c5eeea72379f9e54b04d67a05"
-  integrity sha512-iSJkC7hondHgz7IXSMzuw3XnFwEQ3I1o5NCqZilHStRscPxBnImdQ+j3hymYbzIpxsknEZOZOWwHpQdRkc/FEA==
+"@znemz/js-common-gulp-monorepo-typescript@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulp-monorepo-typescript/-/js-common-gulp-monorepo-typescript-0.0.25.tgz#0a4844ffc524334ef25a1f216c1473258adfb98c"
+  integrity sha512-PVIOrc9XDCVNwwwWcTCpQifHN7lMN3Ge/5SUet27HD2Xl3iFvTVodhSLyX7dl4eGAa8acxGUB861HPfW/C+k6w==
   dependencies:
-    "@znemz/js-common-debug-clone" "^0.0.24"
+    "@znemz/js-common-debug-clone" "^0.0.25"
     commander "^3.0.0"
     debug-fabulous "^1.1.0"
     del "^5.0.0"
@@ -2515,31 +2515,38 @@
     lodash "^4.17.15"
     typescript "^3.5.1"
 
-"@znemz/js-common-gulpfile-monorepo-typescript-clone@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulpfile-monorepo-typescript-clone/-/js-common-gulpfile-monorepo-typescript-clone-0.0.24.tgz#4fa7859174916625817bdd38fae4ca46f109c141"
-  integrity sha512-V+Hfr2YWOvPN+KaVb/Yt8xSm841cWykuRFDW15/hpikbXdlFbkZ+ufraYxCpBlIFo9gP+Xkyl3+/HCz66YrAfw==
+"@znemz/js-common-gulpfile-monorepo-typescript-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-gulpfile-monorepo-typescript-clone/-/js-common-gulpfile-monorepo-typescript-clone-0.0.25.tgz#8c23970d40317a200222686e9ff7c4547303e5c7"
+  integrity sha512-S3x7y2mSNuF5AEMldNP3gsP8NHiy1PJ46uNxKkYZ/dlXcJ8MXpbGVRGJpbNyifxuVP2ZiAXg+ib3LOat9kMJFQ==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.24"
-    "@znemz/js-common-gulp-monorepo-typescript" "^0.0.24"
+    "@znemz/js-common-cpy-cli" "^0.0.25"
+    "@znemz/js-common-gulp-monorepo-typescript" "^0.0.25"
 
-"@znemz/js-common-tsconfig-clone@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-clone/-/js-common-tsconfig-clone-0.0.24.tgz#3f24c30754995177952af637f4ca50bfe2fb92c0"
-  integrity sha512-FTkCiJpGtyescjWK7GpxsE88OSQps8za6Ds78kiNbX9LQEi0s4b2OMfcWWDAiEg+Jqpf9b8XC20xRfK9bNcFHw==
+"@znemz/js-common-tsconfig-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-clone/-/js-common-tsconfig-clone-0.0.25.tgz#4efef846efc6518429999ba20ff5a3efc2cbd87d"
+  integrity sha512-xJ4DxAFQtt5DyHqR9Yms79jAqoOZpwYFsQQYrVICqV69auvuJH3WsLb1jx7csV2QObwvZUpoAsf9Qrgv7DtDUg==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.24"
-    "@znemz/js-common-debug-clone" "^0.0.24"
+    "@znemz/js-common-cpy-cli" "^0.0.25"
+    "@znemz/js-common-debug-clone" "^0.0.25"
     debug-fabulous "^1.1.0"
 
-"@znemz/js-common-tsconfig-mono-react-clone@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-mono-react-clone/-/js-common-tsconfig-mono-react-clone-0.0.24.tgz#ae0c1d12926ecf1fae1e60f406e67ea5e0ec5b88"
-  integrity sha512-h59kfRJkUoZn433wDviVQKIOwkMHctLGvp1wH5Pidmjkj60BrvoQxMljwrIwqN9Z9Ml1WNMsywEjDzU8C0BaKQ==
+"@znemz/js-common-tsconfig-mono-react-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-mono-react-clone/-/js-common-tsconfig-mono-react-clone-0.0.25.tgz#f0045b28e7e1eab5c5c2613483c49055a71d2d26"
+  integrity sha512-yx+vlKuC0tVZiLEknbBubFZ08jfa2mzy2IElMhpocnA6px36TJWxOTSA+22Qs2+afymo1Bz0/NxCs/BryANf0w==
   dependencies:
-    "@znemz/js-common-cpy-cli" "^0.0.24"
-    "@znemz/js-common-debug-clone" "^0.0.24"
+    "@znemz/js-common-cpy-cli" "^0.0.25"
+    "@znemz/js-common-debug-clone" "^0.0.25"
     debug-fabulous "^1.1.0"
+
+"@znemz/js-common-tsconfig-react-clone@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-tsconfig-react-clone/-/js-common-tsconfig-react-clone-0.0.25.tgz#845e3efe8c3545c4f20e3dd8e45ac00008e1b185"
+  integrity sha512-job36W1vjnJNoE5aA/BDeJaVxFvd6oGYiduhoFZMbcMd/zRudDQK9ZhLfWH1s04gqQs176h37GvfFOVExHr+vg==
+  dependencies:
+    "@znemz/js-common-cpy-cli" "^0.0.25"
 
 "@znemz/use-global-hook@^1.1.8":
   version "1.1.8"

@@ -6,12 +6,12 @@ import { ColumnsMap } from '.';
 export interface GridTemplateOuterProps {
   columnsMap: ColumnsMap;
   headerCushion: number;
-  sortDirs?: Map<SortDirection>;
+  sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
 }
 
 export interface GridTemplateProps {
-  style: Style;
+  style: Record<string, any>;
 }
 
 const GridTemplate = ({

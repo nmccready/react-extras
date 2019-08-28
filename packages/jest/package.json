@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/nmccready/hooks.git"
   },
+  "scripts": {
+    "prepare": "yarn jest-config-mono-package-clone"
+  },
   "license": "MIT",
   "author": "Nicholas McCready",
   "files": [

@@ -20,3 +20,4 @@ dist
 public
 gulpfile.js
 tsconfig.json
+packages/**/jest.config.js

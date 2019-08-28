@@ -29,6 +29,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepare": "yarn jest-config-mono-package-clone"
+  },
   "gitHead": "90dc96976f83d9fcf61b4a361f1b8c5184f4a460",
   "gulp": {
     "opts": {
