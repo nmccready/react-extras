@@ -47,8 +47,8 @@
   "gulp": {
     "opts": {
       "doBabel": true,
-      "doTs": true,
-      "doTypes": false,
+      "doTs": false,
+      "doTypes": true,
       "doSeries": false
     }
   }

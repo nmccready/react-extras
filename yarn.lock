@@ -591,7 +591,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
 
-"@babel/plugin-transform-react-jsx@^7.0.0":
+"@babel/plugin-transform-react-jsx@^7.0.0", "@babel/plugin-transform-react-jsx@^7.1.6":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.3.0.tgz#f2cab99026631c767e2745a5368b331cfe8f5290"
   integrity sha512-a/+aRb7R06WcKvQLOu4/TpjKOdvVEKRLWFpKcNuHhiREPgGRB4TQJxq07+EZLS8LFVYpfq1a5lDUnuMdcCpBKg==
@@ -895,6 +895,23 @@
     webpack-bundle-analyzer "^2.13.1"
     webpack-merge "^4.1.3"
     webpack-serve "^1.0.4"
+
+"@emotion/babel-plugin-jsx-pragmatic@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.1.3.tgz#e06489b00bda80304e7198be76f448dd267df397"
+  integrity sha512-zbxpcKoAX9IMRfJqT2EnYL29AGlJyn+1VPoZW73BJslRDJbzgo2RYJIxR3Hg48kifv/TduIkpMH3L3wU/7yP8g==
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.2.0"
+
+"@emotion/babel-preset-css-prop@^10.0.14":
+  version "10.0.14"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-preset-css-prop/-/babel-preset-css-prop-10.0.14.tgz#2b8508c4e8218b9ef239f9351e0e7bf137a32fbc"
+  integrity sha512-gfjnldUq+5u1/S6UMqFE4fPrcWDlcxDIArZeYKk4hhSDb3IToMKfbezNTk52Dp7SMlb0Y22Co0ReBz4dh1IdhQ==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.1.6"
+    "@babel/runtime" "^7.4.3"
+    "@emotion/babel-plugin-jsx-pragmatic" "^0.1.3"
+    babel-plugin-emotion "^10.0.14"
 
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"
@@ -2097,7 +2114,7 @@
     "@types/react" ">=16.9.0"
     "@types/react-test-renderer" ">=16.9.0"
 
-"@types/babel__core@^7.1.0":
+"@types/babel__core@^7.1.0", "@types/babel__core@^7.1.2":
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.2.tgz#608c74f55928033fce18b99b213c16be4b3d114f"
   integrity sha512-cfCCrFmiGY/yq0NuKNxIQvZFy9kY/1immpSpTngOnyIbD4+eJOG5mxphhHDv3CHL9GltO4GcKr54kGBg3RNdbg==
@@ -2491,6 +2508,36 @@
     is-windows "^1.0.0"
     mkdirp-promise "^5.0.1"
     mz "^2.5.0"
+
+"@znemz/js-common-babel-config-emotion@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config-emotion/-/js-common-babel-config-emotion-0.0.25.tgz#88d98b39975a1337876d03a5ab719b10fec79a26"
+  integrity sha512-HMJhlP2Pok59gLblwM/u7R7OWxytVm7afd54P4VRVr9ODsFP5HdMHr6y8XDdu/qX0sTl/RMKg0icg+imp1xp4g==
+  dependencies:
+    "@babel/core" "^7.0.0"
+    "@emotion/babel-preset-css-prop" "^10.0.14"
+    "@znemz/js-common-babel-config" "^0.0.25"
+    "@znemz/js-common-debug-clone" "^0.0.25"
+    "@znemz/js-common-tsconfig-clone" "^0.0.25"
+
+"@znemz/js-common-babel-config@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@znemz/js-common-babel-config/-/js-common-babel-config-0.0.25.tgz#5d0564b4739407751e346b0408f0bfddfe12a244"
+  integrity sha512-QYHZnsp+8bkTJ9FQ4wZXQEPL/5zIYMzN0vNzKz+WkRWPAWFlcAC188gyD82RkjrTP8Eu971Oxa00XBFNLQ2XtA==
+  dependencies:
+    "@babel/cli" "^7.0.0"
+    "@babel/core" "^7.0.0"
+    "@babel/node" "^7.0.0"
+    "@babel/plugin-proposal-class-properties" "^7.0.0"
+    "@babel/plugin-transform-react-constant-elements" "^7.0.0"
+    "@babel/plugin-transform-runtime" "^7.3.4"
+    "@babel/polyfill" "^7.0.0"
+    "@babel/preset-env" "^7.3.1"
+    "@babel/preset-react" "^7.0.0"
+    "@babel/preset-typescript" "^7.3.3"
+    "@types/babel__core" "^7.1.2"
+    "@znemz/js-common-debug-clone" "^0.0.25"
+    "@znemz/js-common-tsconfig-clone" "^0.0.25"
 
 "@znemz/js-common-cpy-cli@^0.0.25":
   version "0.0.25"

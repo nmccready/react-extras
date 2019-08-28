@@ -1,6 +1,5 @@
 import { SortDirection, SortDirections } from '@znemz/react-extras-hooks-use-sort-by';
 import cx from 'classnames';
-import { css } from '@emotion/core';
 import React from 'react';
 
 export interface CaretProps {
@@ -27,7 +26,7 @@ const Caret = ({ sortDirection }: CaretProps) => {
 
   return (
     // @ts-ignore
-    <i disabled={sortDirection === false} css={css(myCss)} className={cx('caret', dir)} />
+    <i disabled={sortDirection === false} css={myCss} className={cx('caret', dir)} />
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import { css } from '@emotion/core';
 import cx from 'classnames';
+import '@emotion/core';
 import { get, noop, merge } from 'lodash';
 import { SortDirection, SortDirections } from '@znemz/react-extras-hooks-use-sort-by';
 import { useToggle } from '@znemz/react-extras-hooks';
@@ -65,17 +65,15 @@ export const HeaderItem = ({
 
   return (
     <div
-      css={css(
-        merge(
-          {
-            '& > div': {
-              cursor: 'pointer',
-              width: '100%', // more for pointer
-              textAlign: 'center',
-            },
+      css={merge(
+        {
+          '& > div': {
+            cursor: 'pointer',
+            width: '100%', // more for pointer
+            textAlign: 'center',
           },
-          less
-        )
+        },
+        less
       )}
       className={cx(
         'HeaderItem',
