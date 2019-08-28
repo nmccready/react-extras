@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { css } '@emotion/core';
+import { css } from '@emotion/core';
 import cx from 'classnames';
 import { get, noop, merge } from 'lodash';
 import { SortDirection, SortDirections } from '@znemz/react-extras-hooks-use-sort-by';
