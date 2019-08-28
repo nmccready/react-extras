@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-hooks",
-  "version": "1.2.0-alpha.5",
+  "version": "1.2.0-alpha.6",
   "description": "react extra hooks",
   "keywords": [
     "extras",
@@ -22,7 +22,7 @@
     "prepare": "yarn js-common-jest-config-mono-package-clone"
   },
   "dependencies": {
-    "@znemz/react-extras-hooks-use-sort-by": "^1.2.0-alpha.5",
+    "@znemz/react-extras-hooks-use-sort-by": "^1.2.0-alpha.6",
     "@znemz/use-global-hook": "^1.1.8",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
