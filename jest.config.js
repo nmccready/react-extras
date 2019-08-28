@@ -5,7 +5,7 @@ const toNotIgnore = {
 };
 
 const toExport = {
-  projects: ['<rootDir>/packages/*/jest.config.js'],
+  rootDir: __dirname,
   // moduleFileExtensions: ['js', 'css', 'ts'],
   transformIgnorePatterns: [
     'node_modules',

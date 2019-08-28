@@ -21,3 +21,4 @@ public
 gulpfile.js
 tsconfig.json
 packages/**/jest.config.js
+debug.js

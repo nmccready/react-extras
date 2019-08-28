@@ -1,12 +1,12 @@
-import { testHook } from '@znemz/react-extras-jest';
+import { renderHook } from '@testing-library/react-hooks';
+
 import { useStateChange } from '.';
 
 describe(useStateChange.name, () => {
   it('should have correct defaultState', () => {
     const defaultState = { one: 1 };
-    testHook(() => {
-      const [state] = useStateChange(defaultState);
-      expect(state).toEqual(defaultState);
-    });
+    const { result } = renderHook(() => useStateChange(defaultState));
+
+    expect(result.current[0]).toEqual(defaultState);
   });
 });

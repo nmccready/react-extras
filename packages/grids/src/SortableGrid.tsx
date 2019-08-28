@@ -9,7 +9,7 @@ import { mapValues } from 'lodash';
 
 import { Grid, Data, ColumnsMap, RowRenderer } from './index';
 
-const debug = require('../../../../debug').spawn('components:Grid:Sortable');
+const debug = require('../debug').spawn('components:Grid:Sortable');
 
 export interface SortableGridProps {
   data: Data;

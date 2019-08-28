@@ -23,6 +23,7 @@
     "prepare": "yarn js-common-jest-config-mono-package-clone"
   },
   "dependencies": {
+    "@testing-library/react-hooks": "^2.0.1",
     "@types/jest": "^24.0.17",
     "@types/jest-expect-message": "^1.0.0",
     "eslint-import-resolver-jest": "^2.1.1",
