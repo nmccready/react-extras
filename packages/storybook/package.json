@@ -1,0 +1,28 @@
+{
+  "name": "@znemz/react-extras-storybook",
+  "version": "1.2.0-alpha.7",
+  "private": true,
+  "license": "MIT",
+  "author": "nmccready",
+  "scripts": {
+    "build-storybook": "build-storybook",
+    "prepare": "exit 0",
+    "start": "yarn storybook",
+    "storybook": "NODE_ENV=development node -r esm .storybook/start-storybook.js",
+    "storybook:raw": "node -r esm node_modules/.bin/start-storybook"
+  },
+  "dependencies": {
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "@znemz/addon-knobs": "^5.2.0-alpha.31",
+    "@znemz/js-common-webpack-config": "^0.0.28",
+    "chroma-js": "^2.0.6"
+  },
+  "gulp": {
+    "opts": {
+      "skip": true
+    }
+  }
+}
