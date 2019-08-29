@@ -1,6 +1,6 @@
 import React, { forwardRef, PropsWithChildren, MutableRefObject } from 'react';
 import { SortDirection } from '@znemz/react-extras-hooks-use-sort-by';
-import Header, { OnSortProps } from './Header';
+import DefaultHeader, { Header as HeaderType, OnSortProps } from './Header';
 import { ColumnsMap } from '.';
 
 export interface GridTemplateOuterProps {
@@ -8,6 +8,7 @@ export interface GridTemplateOuterProps {
   headerCushion: number;
   sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
+  Header?: HeaderType;
 }
 
 export interface GridTemplateProps {
@@ -19,6 +20,7 @@ const GridTemplate = ({
   headerCushion = 0,
   sortDirs,
   onSort,
+  Header = DefaultHeader,
 }: GridTemplateOuterProps) =>
   forwardRef(
     (

@@ -34,19 +34,9 @@
     "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-transform-react-constant-elements": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.3.4",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/preset-typescript": "^7.3.3",
-    "@babel/types": "^7.4.0",
     "@compositor/logo": "^1.4.0",
     "@compositor/x0": "^6.0.7",
+    "@emotion/core": "^10.0.15",
     "@testing-library/react-hooks": "^2.0.1",
     "@types/lodash": "^4.14.134",
     "@types/node": "^11.13.5",
@@ -54,10 +44,10 @@
     "@types/react-dom": "^16.8.19",
     "@typescript-eslint/eslint-plugin": "^1.11",
     "@typescript-eslint/parser": "^1.11",
-    "@znemz/js-common-babel-config-emotion": "^0.0.25",
-    "@znemz/js-common-debug-clone": "^0.0.25",
-    "@znemz/js-common-gulpfile-monorepo-typescript-clone": "^0.0.25",
-    "@znemz/js-common-tsconfig-mono-react-clone": "^0.0.25",
+    "@znemz/js-common-babel-config-emotion": "^0.0.28",
+    "@znemz/js-common-debug-clone": "^0.0.28",
+    "@znemz/js-common-gulpfile-monorepo-typescript-clone": "^0.0.28",
+    "@znemz/js-common-tsconfig-mono-react-clone": "^0.0.28",
     "babel-eslint": "^10.0.1",
     "babel-plugin-minify-mangle-names": "^0.5.0",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -94,6 +84,9 @@
     "sort-package-json": "^1.21.0",
     "styled-components": "^4.3.2",
     "typescript": "3.5.X"
+  },
+  "resolutions": {
+    "babel-loader": "^8.0.6"
   },
   "engines": {
     "node": ">=8",

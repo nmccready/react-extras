@@ -6,17 +6,22 @@ export interface CaretProps {
   sortDirection: SortDirection;
 }
 
+const size = 5;
+
 const myCss = {
   '&.caret': {
-    border: 'solid white',
-    borderWidth: '0 3px 3px 0',
-    display: 'inline-block',
-    padding: 3,
+    marginLeft: 5,
     '&.up': {
-      transform: 'rotate(-135deg)',
+      borderLeft: `${size}px solid transparent`,
+      borderRight: `${size}px solid transparent`,
+      borderBottom: `${size}px solid black`,
+      transform: 'translateY(-40%)',
     },
     '&.down': {
-      transform: 'rotate(45deg)',
+      borderLeft: `${size}px solid transparent`,
+      borderRight: `${size}px solid transparent`,
+      borderTop: `${size}px solid black`,
+      transform: 'translateY(40%)',
     },
   },
 };

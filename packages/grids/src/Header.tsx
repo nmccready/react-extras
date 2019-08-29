@@ -23,7 +23,16 @@ export interface HeaderItemProps {
   name?: string;
 }
 
-export const HeaderItem = ({
+export type HeaderItem = ({
+  text,
+  index,
+  sortDirs,
+  onSort,
+  less,
+  name,
+}: React.PropsWithChildren<HeaderItemProps>) => JSX.Element;
+
+export const DefaultHeaderItem: HeaderItem = ({
   text,
   index,
   sortDirs,
@@ -59,6 +68,7 @@ export const HeaderItem = ({
       >
         <Caret sortDirection={sortDir} />
         {text}
+        <div className="dummy-for-space"></div>
       </div>
     );
   }
@@ -71,6 +81,8 @@ export const HeaderItem = ({
             cursor: 'pointer',
             width: '100%', // more for pointer
             textAlign: 'center',
+            display: 'inline-flex',
+            justifyContent: 'space-between',
           },
         },
         less
@@ -91,9 +103,25 @@ export interface HeaderProps {
   columnsMap: ColumnsMap;
   sortDirs?: Record<string, SortDirection>;
   onSort?: (_: OnSortProps) => void;
+  HeaderItem?: HeaderItem;
 }
 
-const Header = ({ columnsMap, sortDirs, onSort }: PropsWithChildren<HeaderProps>) => (
+export type Header = ({
+  columnsMap,
+  sortDirs,
+  onSort,
+  HeaderItem,
+}: React.PropsWithChildren<HeaderProps>) => JSX.Element;
+
+const DefaultHeader: Header = ({
+  columnsMap,
+  sortDirs,
+  onSort,
+  HeaderItem = DefaultHeaderItem,
+}: PropsWithChildren<HeaderProps>) => (
+  // while this makes it easier for keeping the HeaderItems spread across evenly
+  // we lose the hover events as css parent selectors are not supported.
+  // <div className="Header" css={{ display: 'flex', justifyContent: 'center' }}>,
   <>
     {columnsMap.map((c, index) => {
       const text = get(c, ['label'], c);
@@ -109,6 +137,7 @@ const Header = ({ columnsMap, sortDirs, onSort }: PropsWithChildren<HeaderProps>
       );
     })}
   </>
+  // </div>
 );
 
-export default Header;
+export default DefaultHeader;

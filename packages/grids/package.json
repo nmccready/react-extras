@@ -49,7 +49,7 @@
       "doBabel": true,
       "doTs": false,
       "doTypes": true,
-      "doSeries": false
+      "doSeries": true
     }
   }
 }
