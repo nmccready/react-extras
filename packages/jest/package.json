@@ -38,7 +38,7 @@
     "react-test-renderer": "^16.8.6"
   },
   "devDependencies": {
-    "@znemz/js-common-jest-config-mono-package-clone": "^0.0.28"
+    "@znemz/js-common-jest-config-mono-package-clone": "^0.1.0"
   },
   "publishConfig": {
     "access": "public"

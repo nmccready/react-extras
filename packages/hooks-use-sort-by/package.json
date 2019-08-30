@@ -28,7 +28,7 @@
     "react": "^16.8"
   },
   "devDependencies": {
-    "@znemz/js-common-jest-config-mono-package-clone": "^0.0.28"
+    "@znemz/js-common-jest-config-mono-package-clone": "^0.1.0"
   },
   "publishConfig": {
     "access": "public"

@@ -25,3 +25,7 @@ or
 ```sh
 yarn test:ci
 ```
+
+## DevOps
+
+- package.json has `"prepublishOnly": "yarn build && yarn test && yarn lint && yarn build",` , we build twice, once to satisfy dependencies for linting and for typescript compilation, we need to rewrite the build again at the end to make sure it's integrity is correct (babel, ts, and type build orders).
