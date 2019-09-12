@@ -23,10 +23,11 @@
   },
   "dependencies": {
     "@znemz/react-extras-hooks-use-sort-by": "^1.2.1",
-    "@znemz/use-global-hook": "^1.1.8",
+    "@znemz/use-global-hook": "^1.1.9",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
-    "react": "^16.8"
+    "react": "^16.8",
+    "reinspect": "^1.0.1"
   },
   "devDependencies": {
     "@znemz/js-common-jest-config-mono-package-clone": "^0.1.0"
