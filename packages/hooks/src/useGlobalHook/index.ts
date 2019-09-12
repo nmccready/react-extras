@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as reinspect from 'reinspect';
+import genId from 'shortid';
+
 import $useGlobalHook, { Initializer, ReactLib } from '@znemz/use-global-hook';
 
 import { InnerBaseActions, OuterBaseActions } from '@znemz/use-global-hook/lib/actions';
@@ -14,6 +16,7 @@ export interface OurUseStoreProps<
   actions?: InnerA | InnerBaseActions<T>;
   initializer?: Initializer<T, OuterA>;
   inspect?: boolean;
+  storeId?: string;
 }
 
 export const useGlobalHook = <
@@ -27,17 +30,10 @@ export const useGlobalHook = <
   initializer,
   React = { useState, useEffect },
   inspect = false,
+  storeId = genId(),
 }: OurUseStoreProps<T, InnerA, OuterA>) => {
   if (inspect) {
-    /*
-      Note: This currently does not hook into Redux Dev tools
-      due to `reducerId` not being defined when reinspect.useState is injected
-      to use-global-hook
-
-      reducerId either needs to be optional, or we need to memoize or hook into useContext?
-    */
-    // @ts-ignore
-    React.useState = reinspect.useState;
+    React.useState = reinspect.useState.bind(undefined, initialState, storeId);
   }
   return $useGlobalHook<T, InnerA, OuterA, WorkR>({
     React,

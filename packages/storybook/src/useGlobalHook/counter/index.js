@@ -5,6 +5,11 @@ const initialState = {
   counter: 0,
 };
 
-export const useCounter = useGlobalHook({ initialState, actions, inspect: true });
+export const useCounter = useGlobalHook({
+  initialState,
+  actions,
+  inspect: true,
+  storeId: 'useCounter',
+});
 
 export default useCounter;

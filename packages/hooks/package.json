@@ -27,7 +27,8 @@
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
     "react": "^16.8",
-    "reinspect": "^1.0.1"
+    "reinspect": "^1.0.1",
+    "shortid": "^2.2.15"
   },
   "devDependencies": {
     "@znemz/js-common-jest-config-mono-package-clone": "^0.1.0"
