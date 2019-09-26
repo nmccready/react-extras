@@ -25,7 +25,6 @@
     "@testing-library/react-hooks": "^2.0.1",
     "@types/jest": "^24.0.17",
     "@types/jest-expect-message": "^1.0.0",
-    "debug-fabulous": "^1.1.0",
     "eslint-import-resolver-jest": "^2.1.1",
     "eslint-plugin-jest": "^22.3.2",
     "jest": "^24.8",
@@ -39,7 +38,7 @@
     "react-test-renderer": "^16.8.6"
   },
   "devDependencies": {
-    "@znemz/js-common-jest-config-mono-package-clone": "^0.1.0"
+    "@znemz/js-common-jest-config-mono-package-clone": "^0.1.2"
   },
   "publishConfig": {
     "access": "public"
