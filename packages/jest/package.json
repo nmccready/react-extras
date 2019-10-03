@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-jest",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "common jest setup dependencies and extras",
   "keywords": [
     "jest",
