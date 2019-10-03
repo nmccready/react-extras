@@ -20,10 +20,10 @@
   ],
   "main": "lib/index.js",
   "scripts": {
-    "prepare": "yarn js-common-tsconfig-react-clone && yarn js-common-jest-config-mono-package-clone && yarn js-common-debug-clone"
+    "prepare": "yarn js-common-tsconfig-react-clone && yarn js-common-jest-config-mono-package-clone && yarn js-common-debug-clone && yarn patch-package"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.15",
+    "@emotion/core": "^10.0.20",
     "@znemz/react-extras-hooks": "^1.2.4",
     "@znemz/react-extras-hooks-use-sort-by": "^1.2.4",
     "classnames": "^2.2.6",

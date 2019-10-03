@@ -1,0 +1,46 @@
+diff --git a/node_modules/@emotion/core/types/index.d.ts b/node_modules/@emotion/core/types/index.d.ts
+index 63bd817..cdad02e 100644
+--- a/node_modules/@emotion/core/types/index.d.ts
++++ b/node_modules/@emotion/core/types/index.d.ts
+@@ -35,8 +35,8 @@ export function withEmotionCache<Props, RefType = any>(
+ export const jsx: typeof createElement
+
+ export type InterpolationWithTheme<Theme> =
+-  | Interpolation
+-  | ((theme: Theme) => Interpolation)
++  | Interpolation<Theme>
++  | ((theme: Theme) => Interpolation<Theme>)
+
+ export interface GlobalProps<Theme> {
+   styles: InterpolationWithTheme<Theme>
+@@ -47,11 +47,13 @@ export interface GlobalProps<Theme> {
+  */
+ export function Global<Theme = any>(props: GlobalProps<Theme>): ReactElement
+
+-export function keyframes(
++export function keyframes<Theme = any>(
+   template: TemplateStringsArray,
+-  ...args: Array<Interpolation>
++  ...args: Array<Interpolation<Theme>>
++): Keyframes
++export function keyframes<Theme = any>(
++  ...args: Array<Interpolation<Theme>>
+ ): Keyframes
+-export function keyframes(...args: Array<Interpolation>): Keyframes
+
+ export interface ArrayClassNamesArg extends Array<ClassNamesArg> {}
+ export type ClassNamesArg =
+@@ -63,8 +65,11 @@ export type ClassNamesArg =
+   | ArrayClassNamesArg
+
+ export interface ClassNamesContent<Theme> {
+-  css(template: TemplateStringsArray, ...args: Array<Interpolation>): string
+-  css(...args: Array<Interpolation>): string
++  css(
++    template: TemplateStringsArray,
++    ...args: Array<Interpolation<Theme>>
++  ): string
++  css(...args: Array<Interpolation<Theme>>): string
+   cx(...args: Array<ClassNamesArg>): string
+   theme: Theme
+ }

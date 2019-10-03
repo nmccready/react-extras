@@ -37,7 +37,6 @@
   "devDependencies": {
     "@compositor/logo": "^1.4.0",
     "@compositor/x0": "^6.0.7",
-    "@emotion/core": "^10.0.15",
     "@testing-library/react-hooks": "^2.0.1",
     "@types/lodash": "^4.14.134",
     "@types/node": "^11.13.5",
@@ -76,6 +75,7 @@
     "lerna": "^3.16",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
+    "patch-package": "^6.1.2",
     "portfinder": "^1.0.20",
     "prettier": "^1.16.4",
     "react": "^16.8.6",
