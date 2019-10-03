@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 
 export interface UseDelayResetOps {
   resetState?: any;
@@ -8,7 +8,7 @@ export interface UseDelayResetOps {
 export const useDelayReset = <T>(
   defaultState,
   { resetState, delay = 750 }: UseDelayResetOps = {}
-) => {
+): [T, Dispatch<SetStateAction<T>>] => {
   const [state, setState] = useState<T>(defaultState);
   if (defaultState) {
     setTimeout(() => {

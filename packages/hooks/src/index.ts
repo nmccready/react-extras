@@ -5,3 +5,4 @@ export { useSortBy } from '@znemz/react-extras-hooks-use-sort-by/src/index';
 
 export { useGlobalHook } from './useGlobalHook';
 export { useDelayReset } from './useDelayReset';
+export * from './internals';

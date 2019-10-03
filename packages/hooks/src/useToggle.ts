@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
+import { VoidFunc } from './internals';
 
 const debug = require('../debug').spawn('react:hooks:useToggle');
 
@@ -7,11 +8,11 @@ export interface UseToggleStates {
   two: any;
 }
 
-export const useToggle = (
-  initialState: any = false,
+export const useToggle = <T>(
+  initialState: T | boolean = false,
   states: UseToggleStates = { one: false, two: true },
   logStr: string = ''
-) => {
+): [T | boolean, VoidFunc, Dispatch<SetStateAction<boolean | T>>] => {
   const [value, setValue] = useState(initialState);
 
   const toggle = () => {
