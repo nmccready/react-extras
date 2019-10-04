@@ -16,8 +16,10 @@ export const useToggle = <T>(
   const [value, setValue] = useState(initialState);
 
   const toggle = () => {
-    const newVal = value === states.one ? states.two : states.one;
-    return newVal;
+    setValue((curVal) => {
+      const newVal = curVal === states.one ? states.two : states.one;
+      return newVal;
+    });
   };
 
   debug(() => `${logStr}:${value}`);
