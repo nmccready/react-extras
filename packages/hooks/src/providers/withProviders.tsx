@@ -1,7 +1,6 @@
 import React, { ComponentType, ReactElement, PropsWithChildren } from 'react';
 import { compose } from 'recompose';
 import { StateInspector } from 'reinspect';
-import 'reinspect/types';
 
 export const devProviders: ComponentType<any>[] = [StateInspector];
 
