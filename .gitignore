@@ -13,6 +13,7 @@ dist
 .DS_Store
 *lock.json
 tmp
+.tmp
 lib
 dist
 .docz
