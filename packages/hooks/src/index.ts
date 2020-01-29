@@ -1,4 +1,5 @@
 import * as providers from './providers';
+import * as globals from './globals';
 
 export { useStateChange } from './useStateChange';
 export { useToggle } from './useToggle';
@@ -10,4 +11,4 @@ export { useDelayReset } from './useDelayReset';
 
 export * from './internals';
 
-export { providers };
+export { providers, globals };

@@ -1,5 +1,5 @@
 import { OuterBaseActions } from '@znemz/use-global-hook/lib/actions';
-import { useGlobalHook } from '@znemz/react-extras-hooks';
+import { useGlobalHook } from '../useGlobalHook';
 
 export type UseXHRHook = [boolean, OuterBaseActions<boolean>];
 
