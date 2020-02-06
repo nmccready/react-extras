@@ -9,11 +9,15 @@ export const useDelayReset = <T>(
   defaultState,
   { resetState, delay = 750 }: UseDelayResetOps = {}
 ): [T, Dispatch<SetStateAction<T>>] => {
-  const [state, setState] = useState<T>(defaultState);
-  if (defaultState) {
+  const [state, _setState] = useState<T>(defaultState);
+
+  const setState = (newState: T) => {
+    if (newState !== resetState) return;
+    _setState(newState);
     setTimeout(() => {
-      setState(resetState);
+      _setState(resetState);
     }, delay);
-  }
+  };
+
   return [state, setState];
 };
