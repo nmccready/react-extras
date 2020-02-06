@@ -12,7 +12,7 @@ export const useDelayReset = <T>(
   const [state, _setState] = useState<T>(defaultState);
 
   const setState = (newState: T) => {
-    if (newState !== resetState) return;
+    if (newState === resetState) return;
     _setState(newState);
     setTimeout(() => {
       _setState(resetState);
