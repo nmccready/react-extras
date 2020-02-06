@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-grids",
-  "version": "1.5.1",
+  "version": "1.5.2-alpha.0",
   "description": "react extra grids",
   "keywords": [
     "extras",
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@emotion/core": "^10.0.20",
-    "@znemz/react-extras-hooks": "^1.5.1",
-    "@znemz/react-extras-hooks-use-sort-by": "^1.5.1",
+    "@znemz/react-extras-hooks": "^1.5.2-alpha.0",
+    "@znemz/react-extras-hooks-use-sort-by": "^1.5.2-alpha.0",
     "classnames": "^2.2.6",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.5"
