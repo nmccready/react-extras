@@ -1,6 +1,6 @@
 {
   "name": "@znemz/react-extras-hooks-use-sort-by",
-  "version": "1.5.2-alpha.0",
+  "version": "1.5.2",
   "description": "React Hook for sorting",
   "keywords": [
     "react",
