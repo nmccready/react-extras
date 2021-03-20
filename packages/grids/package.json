@@ -13,12 +13,12 @@
   },
   "license": "MIT",
   "author": "Nicholas McCready",
+  "main": "lib/index.js",
   "files": [
     "src",
     "lib",
     "debug.js"
   ],
-  "main": "lib/index.js",
   "scripts": {
     "prepare": "yarn js-common-tsconfig-react-clone && yarn js-common-jest-config-mono-package-clone && yarn js-common-debug-clone && yarn patch-package"
   },

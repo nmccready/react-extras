@@ -34,6 +34,9 @@
     "website": "yarn gulp docs && yarn gulp docs:assets && yarn x0 build docs",
     "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
+  "resolutions": {
+    "babel-loader": "^8.0.6"
+  },
   "devDependencies": {
     "@compositor/logo": "^1.4.0",
     "@compositor/x0": "^6.0.7",
@@ -84,9 +87,6 @@
     "sort-package-json": "^1.21.0",
     "styled-components": "^4.3.2",
     "typescript": "3.5.X"
-  },
-  "resolutions": {
-    "babel-loader": "^8.0.6"
   },
   "engines": {
     "node": ">=8",
