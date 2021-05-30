@@ -24,9 +24,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
         if: ${{ steps.release.outputs.release_created }}
       # - run: npm ci
-      - run:
-        yarn install --frozen-lockfile
-        yarn test
+      - run: >
+          yarn install --frozen-lockfile &&
+          yarn test
         if: ${{ steps.release.outputs.release_created }}
       - run: yarn lerna publish from-package
         env:
