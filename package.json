@@ -35,6 +35,8 @@
     "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@compositor/logo": "^1.4.0",
     "@compositor/x0": "^6.0.7",
     "@testing-library/react-hooks": "^2.0.1",
