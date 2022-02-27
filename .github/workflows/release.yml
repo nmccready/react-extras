@@ -12,13 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           yarn install
           yarn lerna publish
