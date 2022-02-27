@@ -11,11 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - uses: mikeal/publish-to-github-action@master
       - uses: actions/setup-node@v1
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: yarn install
-      - run: yarn lerna publish
-        env:
+      - env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+        run: |
+          yarn install
+          yarn lerna publish
+          git fetch origin -p develop:develop
+          git push origin
+          git checkout develop
+          git push origin
