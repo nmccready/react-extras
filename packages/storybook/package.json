@@ -7,7 +7,7 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "prepare": "exit 0",
-    "start": "yarn storybook",
+    "start": "storybook",
     "storybook": "NODE_ENV=development node -r esm .storybook/start-storybook.js",
     "storybook:raw": "node -r esm node_modules/.bin/start-storybook"
   },

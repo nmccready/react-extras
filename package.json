@@ -20,19 +20,22 @@
   },
   "scripts": {
     "build": "node -r esm ./node_modules/.bin/gulp",
-    "clean:node_modules": "lerna exec --parallel 'rm -rf node_modules' && rm -rf node_modules",
+    "clean:node_modules": "npkill --delete-all",
     "gulp": "node -r esm ./node_modules/.bin/gulp",
+    "preinstall": "npx only-allow pnpm",
     "jest": "node -r esm ./node_modules/.bin/jest",
-    "lint": "yarn gulp tsc && eslint --ext .js,.ts,.tsx *.js packages --color",
-    "prepare": "yarn js-common-gulpfile-monorepo-typescript-clone && yarn js-common-tsconfig-mono-react-clone && yarn sort-package-json && yarn js-common-debug-clone && yarn lerna exec --parallel sort-package-json && lerna exec --parallel yarn prepare",
-    "prepublishOnly": "yarn build && yarn test && yarn lint && yarn build",
-    "scope": "yarn lerna exec --scope",
-    "start": "lerna exec --parallel yarn start",
-    "start:dev": "concurrently -k -r -s first \"yarn test --watch\" \"yarn start\"",
-    "test": "yarn jest",
-    "test:ci": "yarn lint && yarn test --coverage",
-    "website": "yarn gulp docs && yarn gulp docs:assets && yarn x0 build docs",
-    "website:dev": "concurrently -k -r -s all 'yarn gulp docs:watch' 'yarn x0 docs'"
+    "lint": "gulp tsc && eslint --ext .js,.ts,.tsx *.js packages --color",
+    "prepare": "js-common-gulpfile-monorepo-typescript-clone && js-common-tsconfig-mono-react-clone && sort-package-json && js-common-debug-clone && pnpm --parallel exec sort-package-json && pnpm --parallel exec pnpm prepare",
+    "prepublishOnly": "pnpm run build && pnpm test && pnpm run lint && pnpm run build",
+    "start": "pnpm --parallel exec pnpm start",
+    "start:dev": "concurrently -k -r -s first \"pnpm test --watch\" \"pnpm start\"",
+    "test": "npx jest",
+    "test:ci": "pnpm run lint && pnpm test --coverage",
+    "website": "gulp docs && gulp docs:assets && x0 build docs",
+    "website:dev": "concurrently -k -r -s all 'gulp docs:watch' 'x0 docs'"
+  },
+  "resolutions": {
+    "babel-loader": "^8.0.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
@@ -74,9 +77,11 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1",
     "gulp-typescript": "^5.0.1",
-    "lerna": "^3.16",
+    "jest": "^24.8",
+    "jest-cli": "^24.8",
     "lodash": "^4.17.11",
     "memoizee": "^0.4.14",
+    "npkill": "0.10.0",
     "patch-package": "^6.1.2",
     "portfinder": "^1.0.20",
     "prettier": "^1.16.4",
@@ -87,11 +92,7 @@
     "styled-components": "^4.3.2",
     "typescript": "3.5.X"
   },
-  "resolutions": {
-    "babel-loader": "^8.0.6"
-  },
   "engines": {
-    "node": ">=8",
-    "yarn": ">=1.15"
+    "pnpm": ">=7"
   }
 }

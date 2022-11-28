@@ -12,14 +12,14 @@
   },
   "license": "MIT",
   "author": "Nicholas McCready",
+  "main": "lib/index.js",
   "files": [
     "src",
     "lib",
     "debug.js"
   ],
-  "main": "lib/index.js",
   "scripts": {
-    "prepare": "yarn js-common-jest-config-mono-package-clone"
+    "prepare": "js-common-jest-config-mono-package-clone"
   },
   "dependencies": {
     "@znemz/react-extras-hooks-use-sort-by": "^1.5.2",

@@ -23,4 +23,5 @@ gulpfile.js
 tsconfig.json
 packages/**/jest.config.js
 debug.js
-package-lock.json
+# any kind of node lock file
+*lock*
